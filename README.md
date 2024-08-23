@@ -12,16 +12,22 @@ To analyze and visualize air quality data over time, focusing on pollutant level
 
 #Step 1:
 Import the dataset into a DataFrame.
+
 #Step 2:
 Convert date columns to datetime format and handle missing values.
+
 #Step 3:
 Identify and select relevant features for analysis.
+
 #Step 4:
 Perform exploratory data analysis to understand trends and patterns.
+
 #Step 5:
 Apply appropriate statistical or machine learning models for forecasting or classification.
+
 #Step 6:
 Plot the results to visualize trends, anomalies, and predictions.
+
 <br />
 <br />
 
