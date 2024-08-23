@@ -6,27 +6,15 @@
 
 
 ## AIM:
-To analyze and visualize air quality data over time, focusing on pollutant levels such as NOx(GT), and identifying patterns or trends.
+To Analyze and visualize trends in medal counts for various countries and sports across Summer Olympics from 1986 to 2020.
 
 ## ALGORITHM:
 
-# Step 1:
-Import the dataset into a DataFrame.
-
-# Step 2:
-Convert date columns to datetime format and handle missing values.
-
-# Step 3:
-Identify and select relevant features for analysis.
-
-# Step 4:
-Perform exploratory data analysis to understand trends and patterns.
-
-# Step 5:
-Apply appropriate statistical or machine learning models for forecasting or classification.
-
-# Step 6:
-Plot the results to visualize trends, anomalies, and predictions.
+1.Data Collection: Load the Summer Olympic Medals dataset.
+2.Data Cleaning: Clean and preprocess the data.
+3.Trend Analysis: Aggregate and analyze medal counts by year and country.
+4.Visualization: Create visualizations to show trends and distributions.
+5.Insight Generation: Derive insights from the visualizations and trends.
 
 <br />
 <br />
@@ -39,30 +27,31 @@ Plot the results to visualize trends, anomalies, and predictions.
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-
-sns.set(style="darkgrid")
 
 
-df = pd.read_csv('/content/Air Quality.csv')
+data = pd.read_csv("/content/Summer_olympic_Medals.csv")
 
-df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
 
-df.set_index('Date', inplace=True)
+print(data.head())
 
-df = df.dropna(subset=['NOx(GT)'])
+
+data_filtered = data[(data['Year'] >= 1986) & (data['Year'] <= 2020)]
+
+
+medals_by_year = data_filtered.groupby('Year')['Gold'].count()
+
 
 plt.figure(figsize=(12, 6))
-plt.plot(df.index, df['NOx(GT)'], marker='o', linestyle='-', color='blue', label='NOx(GT) Concentration')
-
-plt.title('NOx(GT) Concentration Over Time', fontsize=16)
-plt.xlabel('Date', fontsize=12)
-plt.ylabel('NOx(GT) Concentration (µg/m³)', fontsize=12)
-
-
-plt.legend()
-
+plt.plot(medals_by_year.index, medals_by_year.values, marker='o', linestyle='-')
+plt.title('Number of Gold Medals by Year (1986-2020)')
+plt.xlabel('Year')
+plt.ylabel('Number of Gold Medals')
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.tight_layout()
 plt.show()
+
+
 ```
 <br />
 <br />
@@ -70,7 +59,7 @@ plt.show()
 <br />
 
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/8cdf4912-7ee4-420c-99a9-388b46a8f3dc)
+![image](https://github.com/user-attachments/assets/8556a1af-cb0a-4f33-863d-c381ab6dcacd)
 
 
 # RESULT:
