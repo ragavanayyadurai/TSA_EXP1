@@ -11,9 +11,13 @@ To Analyze and visualize trends in medal counts for various countries and sports
 ## ALGORITHM:
 
 1.Data Collection: Load the Summer Olympic Medals dataset.
+
 2.Data Cleaning: Clean and preprocess the data.
+
 3.Trend Analysis: Aggregate and analyze medal counts by year and country.
+
 4.Visualization: Create visualizations to show trends and distributions.
+
 5.Insight Generation: Derive insights from the visualizations and trends.
 
 <br />
